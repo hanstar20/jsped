@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "../components/layout/pcHeader";
+import MHeader from "../components/layout/mHeader";
 
 // styled components
 import styled from "styled-components";
 
-export default function PcRoute() {
+export default function MRoute() {
 	return (
 		<BrowserRouter>
 			<Container>
 				<ContentWrapper>
-					<Header />
+					<MHeader />
 				</ContentWrapper>
 			</Container>
 		</BrowserRouter>
