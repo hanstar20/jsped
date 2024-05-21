@@ -1,5 +1,6 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
+import { ToggleProvider } from "./context/toggleContext";
 import PcRouter from "./routes/pcRoute";
 import MRouter from "./routes/mRoute";
 
@@ -19,14 +20,16 @@ export const Pc = ({ children }) => {
 
 function App() {
 	return (
-		<>
-			<Mobile>
-				<MRouter />
-			</Mobile>
-			<Pc>
-				<PcRouter />
-			</Pc>
-		</>
+		<ToggleProvider>
+			<>
+				<Mobile>
+					<MRouter />
+				</Mobile>
+				<Pc>
+					<PcRouter />
+				</Pc>
+			</>
+		</ToggleProvider>
 	);
 }
 
