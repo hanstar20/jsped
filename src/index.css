@@ -10,6 +10,10 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+.ReactCollapse--collapse {
+	transition: height 500ms;
+}
+
 @font-face {
 	font-family: "GasoekOne";
 	src: url(./public/assets/fonts/GasoekOne-Regular.ttf);
