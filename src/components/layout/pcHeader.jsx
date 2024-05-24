@@ -31,7 +31,7 @@ const MenuList = styled.ul`
 
 const MenuItem = styled.li`
 	width: 160px;
-	padding: 30px 50px;
+	padding: 27.25px 50px;
 	cursor: pointer;
 	color: #ffffff;
 	font-size: 20px;
@@ -70,22 +70,22 @@ const BurgerButton = styled.div`
 
 const dropdownAnimation = keyframes`
     from {
-        /* opacity: 0; */
+        opacity: 0;
         transform: translateY(-500px);
     }
     to {
-        /* opacity: 1; */
+        opacity: 1;
         transform: translateY(0);
     }
 `;
 
 const dropupAnimation = keyframes`
     from {
-        /* opacity: 1; */
+        opacity: 1;
         transform: translateY(0);
     }
     to {
-        /* opacity: 0; */
+        opacity: 0;
         transform: translateY(-500px);
     }
 `;
@@ -102,7 +102,7 @@ const DropdownContent = styled.div`
 	padding: 0 60px 40px 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	animation-name: ${(props) => (props.hover ? dropdownAnimation : dropupAnimation)};
-	animation-duration: 0.5s;
+	animation-duration: 0.4s;
 	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 `;
@@ -121,14 +121,8 @@ const SubMenuItems = styled.li`
 
 const SubMenuItem = styled.li`
 	padding: 12px 0;
-	cursor: pointer;
 	color: #000000;
 	font-size: 18px;
-
-	&:hover {
-		color: #056338; // 호버시 색 변경
-		font-weight: bold;
-	}
 `;
 
 const SubMenuItemStyledLink = styled(Link)`
@@ -231,16 +225,24 @@ export default function PcHeader() {
 						<Collapse isOpened={collapseToggle[0]}>
 							<MenuDepth2>
 								<li>
-									<StyledLink to='/clinic/cold'>- 감기</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/cold'>
+										- 감기
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/infantCheck'>- 영유아검진</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/infant-check'>
+										- 영유아검진
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/vaccination'>- 예방접종</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/vaccination'>
+										- 예방접종
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/fluidTreatment'>- 수액 치료</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/fluid-treatment'>
+										- 수액 치료
+									</StyledLink>
 								</li>
 							</MenuDepth2>
 						</Collapse>
@@ -258,13 +260,19 @@ export default function PcHeader() {
 						<Collapse isOpened={collapseToggle[1]}>
 							<MenuDepth2>
 								<li>
-									<StyledLink to='/clinic/rhinitis'>- 비염</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/rhinitis'>
+										- 비염
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/atopy'>- 아토피</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/atopy'>
+										- 아토피
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/asthma'>- 천식</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/asthma'>
+										- 천식
+									</StyledLink>
 								</li>
 							</MenuDepth2>
 						</Collapse>
@@ -282,16 +290,24 @@ export default function PcHeader() {
 						<Collapse isOpened={collapseToggle[2]}>
 							<MenuDepth2>
 								<li>
-									<StyledLink to='/clinic/headache'>- 두통</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/headache'>
+										- 두통
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/dizziness'>- 어지럼증</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/dizziness'>
+										- 어지럼증
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/twitch'>- 경련</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/twitch'>
+										- 경련
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/sleep'>- 수면</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/sleep'>
+										- 수면
+									</StyledLink>
 								</li>
 							</MenuDepth2>
 						</Collapse>
@@ -302,17 +318,21 @@ export default function PcHeader() {
 									setCollapseToggle((prev) => [false, false, false, true, false]);
 								}}
 								onClick={() => setHover(false)}
-								to='/clinic/precociousPuberty'>
+								to='/clinic/precocious-puberty'>
 								성장
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<Collapse isOpened={collapseToggle[3]}>
 							<MenuDepth2>
 								<li>
-									<StyledLink to='/clinic/precociousPuberty'>- 성조숙증</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/precocious-puberty'>
+										- 성조숙증
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/growthInHeight'>- 키성장</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/growth-in-height'>
+										- 키성장
+									</StyledLink>
 								</li>
 							</MenuDepth2>
 						</Collapse>
@@ -330,89 +350,95 @@ export default function PcHeader() {
 						<Collapse isOpened={collapseToggle[4]}>
 							<MenuDepth2>
 								<li>
-									<StyledLink to='/clinic/autism'>- 자폐</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/autism'>
+										- 자폐
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/adhd'>- ADHD</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/adhd'>
+										- ADHD
+									</StyledLink>
 								</li>
 								<li>
-									<StyledLink to='/clinic/languageDelay'>- 언어지연</StyledLink>
+									<StyledLink onClick={() => setHover(false)} to='/clinic/language-delay'>
+										- 언어지연
+									</StyledLink>
 								</li>
 							</MenuDepth2>
 						</Collapse>
 					</SubMenuItems>
 					<SubMenuItems>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/check-up/egg'>
 								뇌파 검사
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/check-up/ans'>
 								자율신경계 검사
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/check-up/cdpa'>
 								종합발달심리 검사
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/check-up/gpa'>
 								성장판 검사
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/check-up/at'>
 								알레르기 검사
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 					</SubMenuItems>
 					<SubMenuItems>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/cdc/sit'>
 								감통치료
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/cdc/st'>
 								언어치료
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/cdc/st'>
 								ABBA
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/cdc/sit'>
 								ABBA
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 					</SubMenuItems>
 					<SubMenuItems>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/about-js/greeting'>
 								인사말
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/about-js/introduction'>
 								의료진 소개
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/about-js/time'>
 								진료시간
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/about-js/directions'>
 								오시는 길
 							</SubMenuItemStyledLink>
 						</SubMenuItem>
 						<SubMenuItem>
-							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/features/1'>
+							<SubMenuItemStyledLink onClick={() => setHover(false)} to='/about-js/parking-lot'>
 								주차장
 							</SubMenuItemStyledLink>
 						</SubMenuItem>

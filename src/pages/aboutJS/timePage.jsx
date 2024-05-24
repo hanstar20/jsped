@@ -10,11 +10,11 @@ const ContentContainer = styled.div`
 
 const ContentWrapper = styled.div``;
 
-export default function Introduction() {
+export default function Time() {
 	return (
 		<ContentContainer>
 			<ContentWrapper>
-				<h1>의료진 소개 페이지입니다.</h1>
+				<h1>진료시간 페이지입니다.</h1>
 			</ContentWrapper>
 		</ContentContainer>
 	);

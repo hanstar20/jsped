@@ -25,6 +25,21 @@ import Rhinitis from "../pages/clinic/rhinitisPage";
 import Sleep from "../pages/clinic/sleepPage";
 import Twitch from "../pages/clinic/twitchPage";
 import Vaccination from "../pages/clinic/vaccinationPage";
+// 소아청소년과 검진 페이지 import
+import EGG from "../pages/checkUp/EGGPage";
+import ANS from "../pages/checkUp/ANSPage";
+import CDPA from "../pages/checkUp/CDPAPage";
+import GPA from "../pages/checkUp/GPAPage";
+import AT from "../pages/checkUp/ATPage";
+// SPZ 아동발달센터 페이지 import
+import SIT from "../pages/CDC/SITPage";
+import ST from "../pages/CDC/STPage";
+// 제이에스 소개 페이지 import
+import Greeting from "../pages/aboutJS/greetingPage";
+import Introduction from "../pages/aboutJS/introductionPage";
+import Time from "../pages/aboutJS/timePage";
+import Directions from "../pages/aboutJS/directionsPage";
+import ParkingLot from "../pages/aboutJS/parkingLotPage";
 
 // styled components
 import styled from "styled-components";
@@ -39,25 +54,42 @@ export default function PcRoute() {
 					<Header />
 					<Routes>
 						<Route path='/' element={<MainContent />} exact={true} />
+
 						<Route path='/features/1' element={<FirstFeature />} />
 						<Route path='/features/2' element={<SecondFeature />} />
 						<Route path='/features/3' element={<ThirdFeature />} />
+
 						<Route path='/clinic/adhd' element={<ADHD />} />
 						<Route path='/clinic/asthma' element={<Asthma />} />
 						<Route path='/clinic/atopy' element={<Atopy />} />
 						<Route path='/clinic/autism' element={<Autism />} />
 						<Route path='/clinic/cold' element={<Cold />} />
 						<Route path='/clinic/dizziness' element={<Dizziness />} />
-						<Route path='/clinic/fluidTreatment' element={<FluidTreatment />} />
-						<Route path='/clinic/growthInHeight' element={<GrowthInHeight />} />
+						<Route path='/clinic/fluid-treatment' element={<FluidTreatment />} />
+						<Route path='/clinic/growth-in-height' element={<GrowthInHeight />} />
 						<Route path='/clinic/headache' element={<Headache />} />
-						<Route path='/clinic/infantCheck' element={<InfantCheck />} />
-						<Route path='/clinic/languageDelay' element={<LanguageDelay />} />
-						<Route path='/clinic/precociousPuberty' element={<PrecociousPuberty />} />
+						<Route path='/clinic/infant-check' element={<InfantCheck />} />
+						<Route path='/clinic/language-delay' element={<LanguageDelay />} />
+						<Route path='/clinic/precocious-puberty' element={<PrecociousPuberty />} />
 						<Route path='/clinic/rhinitis' element={<Rhinitis />} />
 						<Route path='/clinic/sleep' element={<Sleep />} />
 						<Route path='/clinic/twitch' element={<Twitch />} />
 						<Route path='/clinic/vaccination' element={<Vaccination />} />
+
+						<Route path='/cdc/sit' element={<SIT />} />
+						<Route path='/cdc/st' element={<ST />} />
+
+						<Route path='/check-up/egg' element={<EGG />} />
+						<Route path='/check-up/ans' element={<ANS />} />
+						<Route path='/check-up/cdpa' element={<CDPA />} />
+						<Route path='/check-up/gpa' element={<GPA />} />
+						<Route path='/check-up/at' element={<AT />} />
+
+						<Route path='/about-js/greeting' element={<Greeting />} />
+						<Route path='/about-js/introduction' element={<Introduction />} />
+						<Route path='/about-js/time' element={<Time />} />
+						<Route path='/about-js/directions' element={<Directions />} />
+						<Route path='/about-js/parking-lot' element={<ParkingLot />} />
 					</Routes>
 				</ContentWrapper>
 				<SideMenu isOpen={toggle} />
