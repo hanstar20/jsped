@@ -349,27 +349,27 @@ const SideMenu = ({ isOpen }) => {
 					<Menu>
 						<MenuTitle>제이에스 소개</MenuTitle>
 						<MenuDepth1>
-							<StyledLink onClick={toggleValue} to='//about-js/greeting'>
+							<StyledLink onClick={toggleValue} to='/about-js/greeting'>
 								인사말
 							</StyledLink>
 						</MenuDepth1>
 						<MenuDepth1>
-							<StyledLink onClick={toggleValue} to='//about-js/introduction'>
+							<StyledLink onClick={toggleValue} to='/about-js/introduction'>
 								의료진 소개
 							</StyledLink>
 						</MenuDepth1>
 						<MenuDepth1>
-							<StyledLink onClick={toggleValue} to='//about-js/time'>
+							<StyledLink onClick={toggleValue} to='/about-js/time'>
 								진료시간
 							</StyledLink>
 						</MenuDepth1>
 						<MenuDepth1>
-							<StyledLink onClick={toggleValue} to='//about-js/directions'>
+							<StyledLink onClick={toggleValue} to='/about-js/directions'>
 								오시는 길
 							</StyledLink>
 						</MenuDepth1>
 						<MenuDepth1>
-							<StyledLink onClick={toggleValue} to='//about-js/parking-lot'>
+							<StyledLink onClick={toggleValue} to='/about-js/parking-lot'>
 								주차장
 							</StyledLink>
 						</MenuDepth1>
