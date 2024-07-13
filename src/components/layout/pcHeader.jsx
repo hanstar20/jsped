@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import { useToggleContext } from "../../context/toggleContext";
 import { Link } from "react-router-dom";
@@ -170,8 +170,25 @@ export default function PcHeader() {
 	const { toggle, toggleValue } = useToggleContext();
 
 	const [collapseToggle, setCollapseToggle] = useState([false, false, false, false, false]);
-
 	const [hover, setHover] = useState(false);
+
+	// useRef를 사용하여 타이머 ID를 저장합니다.
+	const timerIdRef = useRef(null);
+
+	// onMouseEnter 핸들러
+	const handleMouseEnter = () => {
+		// 마우스가 들어오면 타이머를 제거합니다.
+		clearTimeout(timerIdRef.current);
+		setHover(true);
+	};
+
+	// onMouseLeave 핸들러
+	const handleMouseLeave = () => {
+		// 마우스가 나가면 타이머를 설정합니다.
+		timerIdRef.current = setTimeout(() => {
+			setHover(false);
+		}, 200); // 200ms 지연
+	};
 
 	return (
 		<HeaderContainer>
@@ -179,7 +196,7 @@ export default function PcHeader() {
 				<Link to='/'>
 					<HeaderLogo alt='JS PED' src={headerLogo} />
 				</Link>
-				<MenuList onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+				<MenuList onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
 					<MenuItem>JS의 특별함</MenuItem>
 					<MenuItem>소아청소년과 진료</MenuItem>
 					<MenuItem>소아청소년과 검진</MenuItem>
@@ -192,7 +209,7 @@ export default function PcHeader() {
 					<div />
 				</BurgerButton>
 			</Nav>
-			<DropdownContent hover={hover} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+			<DropdownContent hover={hover} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
 				<SubMenuList>
 					<SubMenuItems>
 						<SubMenuItem>

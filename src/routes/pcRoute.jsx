@@ -48,7 +48,7 @@ export default function PcRoute() {
 	const { toggle, toggleValue } = useToggleContext();
 
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename={process.env.PUBLIC_URL}>
 			<Container>
 				<ContentWrapper>
 					<Header />
